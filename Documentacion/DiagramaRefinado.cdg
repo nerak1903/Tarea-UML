@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="tareauml">
+  <ClassDiagramComponents>
+    <Class name="Competencia" package="tareauml" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="protected"/>
+        <Field name="descripcion" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDescripcion" returnType="String" visibility="public"/>
+        <Method name="setDescripcion" returnType="void" visibility="public">
+          <Argument type="String" name="descripcion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Ciclo" package="tareauml" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="protected"/>
+        <Field name="descripcion" type="String" visibility="protected"/>
+        <Field name="numHoras" type="int" visibility="protected"/>
+        <Field name="year" type="int" visibility="protected"/>
+        <Field name="listaCompetencias" type="Competencia[]" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getDescripcion" returnType="String" visibility="public"/>
+        <Method name="setDescripcion" returnType="void" visibility="public">
+          <Argument type="String" name="descripcion"/>
+        </Method>
+        <Method name="getNumHoras" returnType="int" visibility="public"/>
+        <Method name="setNumHoras" returnType="void" visibility="public">
+          <Argument type="int" name="numHoras"/>
+        </Method>
+        <Method name="getYear" returnType="int" visibility="public"/>
+        <Method name="setYear" returnType="void" visibility="public">
+          <Argument type="int" name="year"/>
+        </Method>
+        <Method name="getListaCompetencias" returnType="Competencia[]" visibility="public"/>
+        <Method name="setListaCompetencias" returnType="void" visibility="public">
+          <Argument type="Competencia[]" name="listaCompetencias"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pregunta" package="tareauml" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="enunciado" type="String" visibility="protected"/>
+        <Field name="respuesta" type="String[]" visibility="protected"/>
+        <Field name="respuestaValida" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getEnunciado" returnType="String" visibility="public"/>
+        <Method name="setEnunciado" returnType="void" visibility="public">
+          <Argument type="String" name="enunciado"/>
+        </Method>
+        <Method name="getRespuesta" returnType="String[]" visibility="public"/>
+        <Method name="setRespuesta" returnType="void" visibility="public">
+          <Argument type="String[]" name="respuesta"/>
+        </Method>
+        <Method name="getRespuestaValida" returnType="int" visibility="public"/>
+        <Method name="setRespuestaValida" returnType="void" visibility="public">
+          <Argument type="int" name="respuestaValida"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Examen" package="tareauml" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="descripcion" type="String" visibility="protected"/>
+        <Field name="listaPreguntas" type="Pregunta[]" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getDescripcion" returnType="String" visibility="public"/>
+        <Method name="setDescripcion" returnType="void" visibility="public">
+          <Argument type="String" name="descripcion"/>
+        </Method>
+        <Method name="getListaPreguntas" returnType="Pregunta[]" visibility="public"/>
+        <Method name="setListaPreguntas" returnType="void" visibility="public">
+          <Argument type="Pregunta[]" name="listaPreguntas"/>
+        </Method>
+        <Method name="calificar" returnType="void" visibility="public"/>
+        <Method name="elegirPreguntas" returnType="void" visibility="public"/>
+        <Method name="ordenarPreguntas" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="tareauml" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="protected"/>
+        <Field name="apellidos" type="String" visibility="protected"/>
+        <Field name="direccion" type="String" visibility="protected"/>
+        <Field name="tlf" type="String" visibility="protected"/>
+        <Field name="alias" type="String" visibility="protected"/>
+        <Field name="email" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellidos" returnType="String" visibility="public"/>
+        <Method name="setApellidos" returnType="void" visibility="public">
+          <Argument type="String" name="apellidos"/>
+        </Method>
+        <Method name="getDireccion" returnType="String" visibility="public"/>
+        <Method name="setDireccion" returnType="void" visibility="public">
+          <Argument type="String" name="direccion"/>
+        </Method>
+        <Method name="getTlf" returnType="String" visibility="public"/>
+        <Method name="setTlf" returnType="void" visibility="public">
+          <Argument type="String" name="tlf"/>
+        </Method>
+        <Method name="getAlias" returnType="String" visibility="public"/>
+        <Method name="setAlias" returnType="void" visibility="public">
+          <Argument type="String" name="alias"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setEmail" returnType="void" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Profesor" package="tareauml" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="NRP" type="String" visibility="protected"/>
+        <Field name="asigImparte" type="Modulo[]" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getNRP" returnType="String" visibility="public"/>
+        <Method name="setNRP" returnType="void" visibility="public">
+          <Argument type="String" name="NRP"/>
+        </Method>
+        <Method name="getAsigImparte" returnType="Modulo[]" visibility="public"/>
+        <Method name="setAsigImparte" returnType="void" visibility="public">
+          <Argument type="Modulo[]" name="asigImparte"/>
+        </Method>
+        <Method name="anadirModulo" returnType="void" visibility="public"/>
+        <Method name="setNRP" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Alumno" package="tareauml" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="notaMedia" type="double" visibility="protected"/>
+        <Field name="matricula" type="Modulo[]" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getNotaMedia" returnType="double" visibility="public"/>
+        <Method name="setNotaMedia" returnType="void" visibility="public">
+          <Argument type="double" name="notaMedia"/>
+        </Method>
+        <Method name="getMatricula" returnType="Modulo[]" visibility="public"/>
+        <Method name="setMatricula" returnType="void" visibility="public">
+          <Argument type="Modulo[]" name="matricula"/>
+        </Method>
+        <Method name="emitirCertificado" returnType="void" visibility="public"/>
+        <Method name="calcularNotaMedia" returnType="double" visibility="public"/>
+        <Method name="matricular" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Modulo" package="tareauml" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="protected"/>
+        <Field name="contenidos" type="String" visibility="protected"/>
+        <Field name="numHoras" type="int" visibility="protected"/>
+        <Field name="alumnado" type="Alumno[]" visibility="protected"/>
+        <Field name="claustro" type="Profesor[]" visibility="protected"/>
+        <Field name="pruebaExamen" type="Examen" visibility="protected"/>
+        <Field name="pruebaTarea" type="Tarea" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="matricularAlumno" returnType="void" visibility="public"/>
+        <Method name="contratarProfesor" returnType="void" visibility="public"/>
+        <Method name="evaluarAlumno" returnType="void" visibility="public"/>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getContenidos" returnType="String" visibility="public"/>
+        <Method name="setContenidos" returnType="void" visibility="public">
+          <Argument type="String" name="contenidos"/>
+        </Method>
+        <Method name="getNumHoras" returnType="int" visibility="public"/>
+        <Method name="setNumHoras" returnType="void" visibility="public">
+          <Argument type="int" name="numHoras"/>
+        </Method>
+        <Method name="getAlumnado" returnType="Alumno[]" visibility="public"/>
+        <Method name="setAlumnado" returnType="void" visibility="public">
+          <Argument type="Alumno[]" name="alumnado"/>
+        </Method>
+        <Method name="getClaustro" returnType="Profesor[]" visibility="public"/>
+        <Method name="setClaustro" returnType="void" visibility="public">
+          <Argument type="Profesor[]" name="claustro"/>
+        </Method>
+        <Method name="getPruebaExamen" returnType="Examen" visibility="public"/>
+        <Method name="setPruebaExamen" returnType="void" visibility="public">
+          <Argument type="Examen" name="pruebaExamen"/>
+        </Method>
+        <Method name="getPruebaTarea" returnType="Tarea" visibility="public"/>
+        <Method name="setPruebaTarea" returnType="void" visibility="public">
+          <Argument type="Tarea" name="pruebaTarea"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Tarea" package="tareauml" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="descripcion" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="calificar" returnType="void" visibility="public"/>
+        <Method name="getDescripcion" returnType="String" visibility="public"/>
+        <Method name="setDescripcion" returnType="void" visibility="public">
+          <Argument type="String" name="descripcion"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="tareauml.Profesor" target="tareauml.Persona"/>
+    <UseRelation source="tareauml.Ciclo" target="tareauml.Competencia" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pruebaTarea" source="tareauml.Modulo" target="tareauml.Tarea" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tareauml.Alumno" target="tareauml.Modulo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="tareauml.Alumno" target="tareauml.Persona"/>
+    <UseRelation source="tareauml.Modulo" target="tareauml.Tarea" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="pruebaExamen" source="tareauml.Modulo" target="tareauml.Examen" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tareauml.Modulo" target="tareauml.Examen" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tareauml.Modulo" target="tareauml.Alumno" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tareauml.Modulo" target="tareauml.Profesor" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tareauml.Profesor" target="tareauml.Modulo" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="tareauml.Examen" target="tareauml.Pregunta" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
