@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="CiclosFormativos">
+  <ClassDiagramComponents>
+    <Class name="Profesor" package="" visibility="public" xPosition="943.0" yPosition="106.0">
+      <Fields>
+        <Field name="NRP" type="String" visibility="private"/>
+        <Field name="asigImparte" type="Modulo[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="anadirModulo" returnType="void" visibility="public"/>
+        <Method name="setNRP" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Ciclo" package="" visibility="public" xPosition="10.0" yPosition="341.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="descripcion" type="String" visibility="private"/>
+        <Field name="numHoras" type="int" visibility="private"/>
+        <Field name="year" type="int" visibility="private"/>
+        <Field name="listaCompetencias" type="Competencia[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Alumno" package="" visibility="public" xPosition="247.0" yPosition="124.0">
+      <Fields>
+        <Field name="notaMedia" type="double" visibility="private"/>
+        <Field name="matricula" type="Modulo[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="emitirCertificado" returnType="void" visibility="public"/>
+        <Method name="calcularNotaMedia" returnType="double" visibility="public"/>
+        <Method name="matricular" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="" visibility="public" xPosition="628.0" yPosition="10.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellidos" type="String" visibility="private"/>
+        <Field name="direccion" type="String" visibility="private"/>
+        <Field name="tlf" type="String" visibility="private"/>
+        <Field name="alias" type="String" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Competencia" package="" visibility="public" xPosition="351.0" yPosition="367.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="descripcion" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Modulo" package="" visibility="public" xPosition="615.0" yPosition="236.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="contenidos" type="String" visibility="private"/>
+        <Field name="numHoras" type="int" visibility="private"/>
+        <Field name="alumnado" type="Alumno[]" visibility="private"/>
+        <Field name="claustro" type="Profesor[]" visibility="private"/>
+        <Field name="pruebaExamen" type="Examen" visibility="private"/>
+        <Field name="pruebaTarea" type="Tarea" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="matricularAlumno" returnType="void" visibility="public"/>
+        <Method name="contratarProfesor" returnType="void" visibility="public"/>
+        <Method name="evaluarAlumno" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Tarea" package="" visibility="public" xPosition="628.0" yPosition="545.0">
+      <Fields>
+        <Field name="descripcion" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="calificar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Examen" package="" visibility="public" xPosition="943.0" yPosition="341.0">
+      <Fields>
+        <Field name="descripcion" type="String" visibility="private"/>
+        <Field name="listaPreguntas" type="Pregunta[]" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="calificar" returnType="void" visibility="public"/>
+        <Method name="elegirPreguntas" returnType="void" visibility="public"/>
+        <Method name="ordenarPreguntas" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Pregunta" package="" visibility="public" xPosition="1322.0" yPosition="358.0">
+      <Fields>
+        <Field name="enunciado" type="String" visibility="private"/>
+        <Field name="respuesta" type="String[]" visibility="private"/>
+        <Field name="respuestaValida" type="int" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Tiene" source="Modulo" target="Tarea" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Profesor" target="Persona"/>
+    <HasRelation name="Compuesto  por" source="Competencia" target="Modulo" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="Tiene" source="Modulo" target="Examen" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Alumno" target="Persona"/>
+    <HasRelation name="Estudia" source="Alumno" target="Modulo" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+    <HasRelation name="Formado" source="Modulo" target="Alumno" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <HasRelation name="contiene" source="Examen" target="Pregunta" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="Imparte" source="Profesor" target="Modulo" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="Contrata" source="Modulo" target="Profesor" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="Compuesto por" source="Ciclo" target="Competencia" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
